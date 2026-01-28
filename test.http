@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:8000
+
+### Root Endpoint - Check Model Info
+GET {{baseUrl}}/
+Accept: application/json
+
+### Chat - Simple Greeting
+POST {{baseUrl}}/chat
+Content-Type: application/json
+
+{
+  "message": "안녕하세요! 자기소개 부탁드려요.",
+  "max_length": 100,
+  "temperature": 0.7
+}
+
+### Chat - Technical Question
+POST {{baseUrl}}/chat
+Content-Type: application/json
+
+{
+  "message": "Python의 FastAPI가 가진 장점 3가지만 알려줘.",
+  "max_length": 200,
+  "temperature": 0.5
+}
+
+### Chat - Creative Writing
+POST {{baseUrl}}/chat
+Content-Type: application/json
+
+{
+  "message": "짧은 시 한 편 지어줘. 주제는 '가을 하늘'이야.",
+  "max_length": 150,
+  "temperature": 0.8
+}
+
+### Chat - With Conversation History
+POST {{baseUrl}}/chat
+Content-Type: application/json
+
+{
+  "message": "방금 한 말에 대해 더 자세히 설명해줘.",
+  "history": [
+    {"role": "user", "content": "인공지능의 미래에 대해 알려줘."},
+    {"role": "assistant", "content": "인공지능은 생산성 향상과 개인화된 서비스 제공 등 다양한 분야에서 혁신을 일으킬 것입니다."}
+  ],
+  "max_length": 300,
+  "temperature": 0.7
+}
