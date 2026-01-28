@@ -1,5 +1,7 @@
 # Gemma 3 Standalone Chatbot
 
+![Screenshot](screenshot.png)
+
 <details>
 <summary><strong>🇰🇷 Korean Version / 한국어 버전</strong></summary>
 
